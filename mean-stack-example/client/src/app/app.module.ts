@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +15,8 @@ import { BrowserModule } from '@angular/platform-browser';
     BrowserModule,
     CommonModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap:[AppComponent]
