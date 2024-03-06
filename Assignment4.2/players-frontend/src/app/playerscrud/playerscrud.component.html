@@ -1,0 +1,83 @@
+<div class="container mt-4">
+    <div class="card">
+        <h1>Assignment 4: Add Players </h1>
+
+<form>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Full name">
+    </div>
+
+    <div class="form-group">
+        <label>Position</label>
+        <input type="text" [(ngModel)]="position" [ngModelOptions]="{standalone: true}" class="form-control" id="position" placeholder="Position">
+      </div>
+
+      <div class="form-group">
+        <label>Rushing Yards</label>
+        <input type="number" [(ngModel)]="rushingyards" [ngModelOptions]="{standalone: true}" class="form-control" id="rushingyards" placeholder="Rushing yards">
+      </div>
+
+      <div class="form-group">
+        <label>Touch Downs</label>
+        <input type="number" [(ngModel)]="touchdowns" [ngModelOptions]="{standalone: true}" class="form-control" id="touchdowns" placeholder="Touch downs">
+      </div>
+
+      <div class="form-group">
+        <label>Sacks</label>
+        <input type="number" [(ngModel)]="sacks" [ngModelOptions]="{standalone: true}" class="form-control" id="sacks" placeholder="Sacks">
+      </div>
+
+      <div class="form-group">
+        <label>Field Goals Made</label>
+        <input type="number" [(ngModel)]="fieldgoalsmade" [ngModelOptions]="{standalone: true}" class="form-control" id="fieldgoalsmade" placeholder="Field goals made">
+      </div>
+
+      <div class="form-group">
+        <label>Field Goals Missed</label>
+        <input type="number" [(ngModel)]="fieldgoalsmissed" [ngModelOptions]="{standalone: true}" class="form-control" id="fieldgoalsmissed" placeholder="Field goals missed">
+      </div>
+
+      <div class="form-group">
+        <label>Catches</label>
+        <input type="number" [(ngModel)]="catches" [ngModelOptions]="{standalone: true}" class="form-control" id="catches" placeholder="Catches">
+      </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>
+
+<div class="container mt-4" >
+    <h1>Players Table</h1>
+   <table class="table">
+     <thead>    
+     <tr>
+         <th scope="col">Name</th>
+         <th scope="col">Position</th>
+         <th scope="col">Rushing Yards</th>  
+         <th scope="col">Touch Downs</th>
+         <th scope="col">Sacks</th>
+         <th scope="col">Field Goals Made</th>
+         <th scope="col">Field Goals Missed</th>
+         <th scope="col">Catches</th>
+       </tr>
+     </thead>
+     <tbody>
+         <tr *ngFor="let PlayerItem of PlayerArray">
+         <td>{{PlayerItem.name  | uppercase}}</td>
+         <td>{{PlayerItem.position }}</td>
+         <td>{{PlayerItem.rushingyards }}</td>
+         <td>{{PlayerItem.touchdowns }}</td>
+         <td>{{PlayerItem.sacks }}</td>
+         <td>{{PlayerItem.fieldgoalsmade }}</td>
+         <td>{{PlayerItem.fieldgoalsmissed }}</td>
+         <td>{{PlayerItem.catches }}</td>
+         <td>
+           <button type="button" class="btn btn-success" (click)="setUpdate(PlayerItem)">Edit</button>
+           <button type="button" class="btn btn-danger" (click)="setDelete(PlayerItem)">Delete</button>            
+         </td>
+       </tr>          
+     </tbody>
+   </table>
+   </div>
